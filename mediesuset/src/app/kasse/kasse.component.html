@@ -32,43 +32,59 @@
   </div>
     </div>
 <div class="ordergrid">
-  <div class="form">
-  <form id="contact" action="" method="post">
-    <label class="desc" id="title106" for="Field106">
-      Select a Choice
-    </label>
-    <div>
-    <input #antalcamp type="number" id="quantity" value="" name="antalcamp" min="1" max="30" >
-    <select>
-      <ng-container *ngFor="let camp of ticket.item.camps;">
-        <option value="">{{camp.name}}</option>
-      </ng-container>
-    </select>
-    </div>
-    <fieldset>
-      <input placeholder="email" type="text" tabindex="1" required #email name="email" value="">
-    </fieldset>
-    <fieldset>
-      <input placeholder="kode" type="text" tabindex="2" required #kode name="kode" value="">
-    </fieldset>
-    <fieldset>
-      <input placeholder="kode2" type="text" tabindex="3" required #kode2 name="kode2" value="">
-    </fieldset>
-    <fieldset>
-      <input placeholder="navn" type="text" tabindex="4" required #navn name="navn" value="">
-    </fieldset>
-    <fieldset>
-      <input placeholder="adresse" type="text" tabindex="5" required #adresse name="adresse" value="">
-    </fieldset>
-    <fieldset>
-      <input placeholder="post" type="text" tabindex="6" required #post name="post" value="">
-    </fieldset>
-    <fieldset>
-      <input placeholder="navn" type="text" tabindex="7" required #by name="by" value="">
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="order(email.value, navn.value, adresse.value, post.value, by.value)">Submit</button>
-    </fieldset>
+  <div class="form" [formGroup]="koebForm">
+    <form [formGroup]=" koebForm">
+      <section class="personal-information">
+          <section class="reserve">
+              <h3 class="camp">Reserver Camp pladser</h3>
+              <input type="number" name="amout" id="amount" value="1" formControlName="amount">
+              <select formControlName="campId">
+                <ng-container *ngFor="let camp of ticket.item.camps;">
+                  <option value="{{camp.id}}"> {{camp.name}}</option>
+                </ng-container>
+              </select>
+              <h3 class="userinfo">Indtast kundeoplysninger</h3>
+              <label for="e-mail">Email/Brugernavn:</label>
+              <input type="text" name="e-mail" id="e-mail" placeholder="Indtast din email" formControlName="email">
+              <label for="pasword">Adgangskode:</label>
+              <input type="password" name="password" id="password" placeholder="Indtast en adgangskode"
+                  formControlName="password">
+              <label for="repassword">Gentag adgangskode:</label>
+              <input type="password" name="repassword" id="repassword" placeholder="Gentag adgangskode"
+                  formControlName="repassword">
+              <label for="name">Navn:</label>
+              <input type="text" name="name" id="name" placeholder="Indtast navn" formControlName="name">
+              <label for="address">Adresse:</label>
+              <input type="text" name="address" id="address" placeholder="Indtast din adresse"
+                  formControlName="address">
+              <div class="city">
+                  <div>
+                      <label for="postNumber">Postnummer:</label>
+                      <input type="text" name="postNumber" id="postNumber" placeholder="Indtast postnummer"
+                          formControlName="zipcode">
+                  </div>
+                  <div>
+                      <label for="cityName">By:</label>
+                      <input type="text" name="cityName" id="cityName" placeholder="Indtast bynavn"
+                          formControlName="city">
+                  </div>
+              </div>
+          </section>
+          <section class="shipping-option">
+              <div>
+                  <input type="radio" id="send" value="1" formControlName="type">
+                  <label for="send"><span>Jeg ønsker billetterne tilsendt.</span>
+                      Vi sender billetterne til dig med posten.</label>
+              </div>
+              <div>
+                  <input type="radio" id="print" value="2" formControlName="type">
+                  <label for="print"><span>Jeg udskriver billetterne selv </span>
+                      Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således
+                      forsendelses-gebyret.</label>
+              </div>
+              <button type="submit" (click)="onSubmit()">Send</button>
+          </section>
+      </section>
   </form>
 </div>
 <div>hej</div>

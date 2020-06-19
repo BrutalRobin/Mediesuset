@@ -14,7 +14,20 @@ import { ViewEncapsulation } from '@angular/core';
 export class KasseComponent implements OnInit {
   ticket: any;
   number: number = 1;
-  loginForm: FormGroup;
+  ticketId = this.route.snapshot.paramMap.get('id');
+  koebForm = this.fb.group({
+    amount: ['', Validators.required],
+    email: ['', Validators.required],
+    name: ['', Validators.required],
+    address: ['', Validators.required],
+    zipcode: ['', Validators.required],
+    city: ['', Validators.required],
+    campingAmount: ['', Validators.required],
+    password: ['', Validators.required],
+    repassword: ['', Validators.required],
+    campId: ['', Validators.required],
+    type: ['', Validators.required],
+  });
   @ViewChild("price") price: ElementRef;
   @ViewChild("antal") antal: ElementRef;
   @ViewChild("calc1") calc1: ElementRef;
@@ -32,10 +45,6 @@ export class KasseComponent implements OnInit {
     .subscribe(data => {
       this.ticket = data;
       console.log(this.ticket)
-    });
-    this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
     });
   }
 
@@ -79,49 +88,26 @@ export class KasseComponent implements OnInit {
         return decodeURIComponent(cookie.substring(nameLenPlus));
       })[0] || null;
   }
- order(email, navn, adresse, post, by) {
-    const token = this.getCookie('token');
-    const user_id = this.getCookie('user_id');
-    const produktId = this.route.snapshot.paramMap.get('id')
-    const camp = '1';
-    const mængde = '1';
-    const type = 'print';
-
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  onSubmit() {
     const formData: any = new FormData();
-    formData.append('id', 10);
-    formData.append('email', email);
-    formData.append('name', navn);
-    formData.append('address', adresse);
-    formData.append('zipcode', post);
-    formData.append('city', by);
-    formData.append('quantity', 2);
-    formData.append('type', type);
-    formData.append('ticket_name', 'Alm. Partoutbillet');
-    formData.append('ticket_price', 1495.00);
-    formData.append('camp_name', 'Camp Colorit');
-    console.dir(formData);
-    console.log(email)
-    console.log(navn)
-    console.log(adresse)
-    console.log(post)
-    console.log(by)
-    console.log(produktId)
-    console.log(camp)
-    console.log(mængde)
-    console.log(type)
-
-    this.http.post('https://api.mediehuset.net/mediesuset/usertickets', formData, { headers }).subscribe(
-      (response: any) => {
-        console.log(response.access_token);
-        if (response.access_token) {
-          return true;
-        } else {
-          return;
-        }
-      },
-      error => console.log
-    );
+    formData.append('email', this.koebForm.get('email').value);
+    formData.append('password', this.koebForm.get('password').value);
+    formData.append('name', this.koebForm.get('name').value);
+    formData.append('address', this.koebForm.get('address').value);
+    formData.append('zipcode', this.koebForm.get('zipcode').value);
+    formData.append('city', this.koebForm.get('city').value);
+    formData.append('ticket_id', this.ticketId);
+    formData.append('camp_id', this.koebForm.get('campId').value);
+    formData.append('quantity', this.koebForm.get('amount').value);
+    formData.append('type', this.koebForm.get('type').value);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.getCookie('token')}`);
+    this.http.post(`https://api.mediehuset.net/mediesuset/usertickets`, formData, { headers }).subscribe((res: any) => {
+      console.log(res);
+      if (res.status === true) {
+        window.alert('Tak for købet');
+      }
+    });
   }
 }
+
 
