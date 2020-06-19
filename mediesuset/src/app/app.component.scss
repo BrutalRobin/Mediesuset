@@ -1,0 +1,136 @@
+$rød: #A33A49;
+$lilla: #80347C;
+$blå: #396999;
+$grøn: #6B8846;
+
+nav {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 16vh;
+  box-sizing:border-box;
+  display: inline-block;
+  transition: .5s;
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+  margin: 0;
+  -webkit-box-shadow:0px 0px 16px 0px #000000 ;
+  -moz-box-shadow:0px 0px 16px 0px #000000 ;
+  box-shadow:0px 0px 16px 0px #000000 ;
+  outline: 0;
+  z-index: 300;
+}
+
+nav ul {
+  padding-top: 10px;
+  margin:0.5rem;
+  padding:0;
+  display:flex;
+  width: 94%;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  padding-top: 10px;
+  list-style:none;
+
+}
+
+nav ul li a {
+  line-height: 5px;
+  color:black;
+  padding: 10vh 1vw 0 1vw;
+  display:flex;
+  text-decoration:none;
+  text-transform:uppercase;
+  transition: .2s;
+
+}
+
+nav ul li a:hover {
+  color:$rød;
+
+}
+
+.imglogo{
+height: 8vh;
+margin-top: 0;
+padding-top: 4vh;
+margin-left: 3vw;
+margin-right: 0;
+position: absolute;
+}
+.imglogo:focus {
+  outline: 0;
+}
+
+.head{
+position: absolute;
+margin-left: 9vw;
+padding-top: 3.7vh;
+font-size: 35px;
+line-height: 30px;
+.bold1{
+  font-weight: 800;
+}
+.date{
+  font-weight: 700;
+  font-size: 20px;
+}
+}
+.head:focus {
+  outline: 0;
+}
+
+button{
+  color: white;
+  background-color: $rød;
+  border: none;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+  height: 5vh;
+  width: 10vw;
+  margin-top: 9vh;
+  transition: .2s;
+  border: 2px solid $rød;
+}
+button:hover{
+  transition: .2s;
+  color: $rød;
+  background-color: white;
+  border: none;
+  font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+  height: 5vh;
+  width: 10vw;
+  margin-top: 9vh;
+  transition: .2s;
+  border: 2px solid $rød;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  background-color: #f1f1f1;
+  margin-top: 2vh;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {color:$rød;}
+
+.dropdown:hover .dropdown-content {visibility: visible;}
+

@@ -1,0 +1,238 @@
+$rød: #A33A49;
+$lilla: #80347C;
+$blå: #396999;
+$grøn: #6B8846;
+.bigtext{
+  font-size: calc(30px + 20 * ((100vw - 320px) / 680));
+  width: 100%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: black;
+  height: 10vh;
+  padding: 2vh 0 2vh 0;
+  margin: 2vh 0;
+}
+#sortgrid{
+  position: relative;
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  text-align: center;
+  color: white;
+  background-color: black;
+  font-family: 'Open Sans', sans-serif;
+  height: fit-content;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10vh;
+  font-size: 30px;
+  border: 2px solid black;
+  .rød{
+    background-color: black;
+    position: relative;
+    height: 10vh;
+    transition: .3s;
+  }
+  .rød:hover{
+    background-color: $rød;
+    position: relative;
+    height: 10vh;
+  }
+  .grøn{
+    transition: .3s;
+    background-color: black;
+    position: relative;
+    height: 10vh;
+  }
+  .grøn:hover{
+    background-color: $grøn;
+    position: relative;
+    height: 10vh;
+  }
+  .blå{
+    transition: .3s;
+    background-color: black;
+    position: relative;
+    height: 10vh;
+  }
+  .blå:hover{
+    background-color: $blå;
+    position: relative;
+    height: 10vh;
+  }
+  .lilla{
+    transition: .3s;
+    background-color: black;
+    position: relative;
+    height: 10vh;
+  }
+  .lilla:hover{
+    background-color: $lilla;
+    position: relative;
+    height: 10vh;
+  }
+  }
+.redscene{
+  font-size: calc(30px + 10 * ((100vw - 320px) / 680));
+  width: 80%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+  height: 10vh;
+  margin: 5vh auto 0 auto;
+  background-color: $rød;
+}
+.blueecene{
+  font-size: calc(30px + 10 * ((100vw - 320px) / 680));
+  width: 80%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+  height: 10vh;
+  margin: 5vh auto 0 auto;
+  background-color: $blå;
+}
+.greenecene{
+  font-size: calc(30px + 10 * ((100vw - 320px) / 680));
+  width: 80%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+  height: 10vh;
+  margin: 5vh auto 0 auto;
+  background-color: $grøn;
+}
+.purpleecene{
+  font-size: calc(30px + 10 * ((100vw - 320px) / 680));
+  width: 80%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+  height: 10vh;
+  margin: 5vh auto 0 auto;
+  background-color: $lilla;
+}
+.event{
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  width: 80%;
+  text-align:center;
+  background-color: rgb(240, 240, 240);
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 2px solid black;
+  transition: 0.5s;
+    .event-overskrift{
+      font-size: 30px;
+      text-align: left;
+      font-weight: 600;
+      padding-left: 1vw;
+      color: black;
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+    }
+    .event-time{
+      text-align: left;
+      font-size: calc(15px + 3 * ((100vw - 320px) / 680));
+      padding-left: 1vw;
+      font-weight: 600;
+      color: black;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    button{
+      color: white;
+      background-color: $rød;
+      border: none;
+      font-size: calc(12px + 7 * ((100vw - 320px) / 680));
+      height: 50px;
+      width: 11vw;
+      margin-top: 10px;
+      transition: .2s;
+      border: 2px solid $rød;
+    }
+    button:hover{
+      transition: .2s;
+      color: $rød;
+      background-color: white;
+      border: none;
+      font-size: calc(12px + 7 * ((100vw - 320px) / 680));
+      height: 50px;
+      margin-top: 10px;
+      width: 11vw;
+      transition: .2s;
+      border: 2px solid $rød;
+    }
+  }
+  .event:hover{
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.005);
+    transition: 0.5s;
+  }
+  .ons1{
+    display: none;
+  }
+  .ons2{
+    display: none;
+  }
+  .ons3{
+    display: none;
+  }
+  .ons4{
+    display: none;
+  }
+  .tors1{
+    display: none;
+  }
+  .tors2{
+    display: none;
+  }
+  .tors3{
+    display: none;
+  }
+  .tors4{
+    display: none;
+  }
+  .fre1{
+    display: none;
+  }
+  .fre2{
+    display: none;
+  }
+  .fre3{
+    display: none;
+  }
+  .fre4{
+    display: none;
+  }
+  .lør1{
+    display: none;
+  }
+  .lør2{
+    display: none;
+  }
+  .lør3{
+    display: none;
+  }
+  .lør4{
+    display: none;
+  }
+  #btnControl {
+    display: none;
+}
+#demo:checked + label {
+  background: black;
+  color: white;
+}
+

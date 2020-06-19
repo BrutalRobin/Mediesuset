@@ -1,0 +1,139 @@
+$rød: #A33A49;
+$lilla: #80347C;
+$blå: #396999;
+$grøn: #6B8846;
+#heroimg{
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+.bigtext{
+  font-size: calc(30px + 20 * ((100vw - 320px) / 680));
+  width: 100%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: black;
+  height: 10vh;
+  padding: 2vh 0 2vh 0;
+  margin: 5vh 0;
+}
+.tickethead{
+  font-size: calc(30px + 10 * ((100vw - 320px) / 680));
+  width: 80%;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: white;
+  height: fit-content;
+  margin: 5vh auto 0 auto;
+  background-color: black;
+  padding-left: 1vw;
+}
+.name{
+  font-size: calc(14px + 4 * ((100vw - 320px) / 680));
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  width: 80%;
+  margin: auto;
+}
+.desc{
+  font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+  font-family: 'Open Sans', sans-serif;
+  width: 80%;
+  margin: auto;
+}
+.billet{
+  display: grid;
+  grid-template-columns: 20% 40% 20% 20%;
+  width: 81%;
+  text-align:center;
+  background-color: rgb(240, 240, 240);
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 2px solid black;
+  transition: 0.5s;
+  .antal{
+    display: flex;
+      input[type=number] {
+        background-color: transparent;
+        border: none;
+        width: calc(20px + 10 * ((100vw - 320px) / 680));
+        font-size: calc(15px + 10 * ((100vw - 320px) / 680));
+        font-family: 'Open Sans', sans-serif;
+        margin-left: 2vw;
+      }
+      input[type=number]::-webkit-inner-spin-button {
+        opacity: 1;
+        height: 40px;
+      }
+      .stk{
+        font-size: calc(15px + 10 * ((100vw - 320px) / 680));
+        text-align: left;
+        font-weight: 600;
+        padding-left: 1vw;
+        color: black;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+    .calcgrid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .ticket_name{
+      font-size: calc(15px + 10 * ((100vw - 320px) / 680));
+      text-align: left;
+      font-weight: 600;
+      padding-left: 1vw;
+      color: black;
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+    }
+    .ticket_price{
+      text-align: left;
+      font-size: calc(15px + 10 * ((100vw - 320px) / 680));
+      padding-left: 1vw;
+      font-weight: 600;
+      color: black;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    button{
+      color: white;
+      background-color: $rød;
+      border: none;
+      font-size: calc(12px + 7 * ((100vw - 320px) / 680));
+      height: 50px;
+      width: 11vw;
+      margin-top: 20px;
+      transition: .2s;
+      border: 2px solid $rød;
+    }
+    button:hover{
+      transition: .2s;
+      color: $rød;
+      background-color: white;
+      border: none;
+      font-size: calc(12px + 7 * ((100vw - 320px) / 680));
+      height: 50px;
+      margin-top: 20px;
+      width: 11vw;
+      transition: .2s;
+      border: 2px solid $rød;
+    }
+  }
+  .billet:hover{
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.005);
+    transition: 0.5s;
+  }
+.ordergrid{
+  width: 80%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr;
+}

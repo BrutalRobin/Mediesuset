@@ -1,0 +1,32 @@
+$rød: #A33A49;
+$lilla: #80347C;
+$blå: #396999;
+$grøn: #6B8846;
+#heroimg{
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+.bigtext{
+  font-size: calc(30px + 20 * ((100vw - 320px) / 680));
+  width: 100%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: black;
+  height: 10vh;
+  padding: 2vh 0 2vh 0;
+  margin: 5vh 0;
+}
+.author{
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 5%;
+  text-align: left;
+  font-size: calc(8px + 3 * ((100vw - 320px) / 680));
+  color: rgb(36, 36, 36);
+}
+.maintext{
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 5%;
+  font-size: calc(10px + 5 * ((100vw - 320px) / 680));
+}

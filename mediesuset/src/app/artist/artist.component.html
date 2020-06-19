@@ -1,0 +1,10 @@
+  <div id="placeTime" [ngStyle]="{
+    'background-color': setUserColor(artist.item.stage_id)}">
+    {{artist.item.stage_name}} {{artist.item.local_time}}</div>
+    <div class="artist">{{artist.item.title}}</div>
+    <section class="description">
+      <div class="info">
+          <figure><img *ngIf="artist.item.image" src="{{artist.item.image}}" alt=""></figure>
+          <p>{{artist.item.description}}</p>
+      </div>
+  </section>

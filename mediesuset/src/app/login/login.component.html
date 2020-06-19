@@ -1,0 +1,15 @@
+
+  <img id="heroimg" src="../../assets/login.jpg" alt="loginImage">
+  <div class="bigtext">LOGIN</div>
+  <br>
+  <br>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+    <label class="username-label" for="username">Brugernavn</label>
+    <input (focus)="focus()" type="text" name="username" id="username" formControlName="username" placeholder="Indtast dit brugernavn" />
+    <label class="password-label" for="password">Kodeord</label>
+    <input (focus)="focus()" type="password" name="password" id="password" formControlName="password" placeholder="Indtast dit kodeord" />
+    <button type="login">Login</button>
+    <p class="error"></p>
+  </form>
+<app-footer></app-footer>
+

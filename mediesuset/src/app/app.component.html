@@ -1,0 +1,25 @@
+<div class="nav">
+    <nav>
+       <div><img class="imglogo" src="../assets/favicon.png" alt="Logo" routerLink="/forside"></div>
+       <p class="head" routerLink="/forside"> <span class="bold1">MEDIE</span>SUSET <br> <span class="date"> 8 - 9 - 10 - 11 JULI 2020</span></p>
+      <ul>
+      <button routerLink="/koebbillet">KØB BILLET</button>
+      <li><a  routerLink="/nyheder">NYHEDER</a></li>
+      <div class="dropdown"><li class="dropbtn"><a>EVENTS</a></li>
+        <div class="dropdown-content">
+          <a routerLink="/program">PROGRAM</a>
+          <a routerLink="/lineup">LINE-UP</a>
+        </div></div>
+      <li><a  routerLink="/camps">CAMPS</a></li>
+      <li><a  routerLink="/info">PRAKTISK INFO</a></li>
+      <div class="dropdown"><li class="dropbtn" routerLink="/login"><a>LOGIN</a></li>
+        <div class="dropdown-content">
+          <a routerLink="/mit_program">MIT PROGRAM</a>
+        </div></div>
+     </ul>
+    </nav>
+</div>
+
+<div [@routeAnimations]="prepareRoute(outlet)" class="content">
+  <router-outlet #outlet="outlet" (activate)="onActivate($event)"></router-outlet>
+</div>

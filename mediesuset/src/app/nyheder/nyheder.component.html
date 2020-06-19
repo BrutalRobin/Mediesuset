@@ -1,0 +1,14 @@
+
+  <img id="heroimg" src="../../assets/koncert-teater-barcelona-1920x696.jpg" alt="Live_fra_mediehuset">
+  <div class="bigtext">NYHEDER</div>
+  <div id="news">
+    <div *ngFor="let news of news.items; let i=index">
+    <div class="news" (click)="goToNewsPage(news.id)">
+      <img src="{{news.image}}" alt="produktimage">
+        <p class="news-overskrift">{{ news.title}}</p>
+        <p class="news-beskriv">{{ news.teaser}}</p>
+        <div class="semere"><button>LÆS MERE</button></div>
+    </div>
+  </div>
+  </div>
+  <app-footer></app-footer>

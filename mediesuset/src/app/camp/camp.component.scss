@@ -1,0 +1,41 @@
+$rød: #A33A49;
+$lilla: #80347C;
+$blå: #396999;
+$grøn: #6B8846;
+#heroimg{
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+.bigtext{
+  font-size: calc(30px + 20 * ((100vw - 320px) / 680));
+  width: 100%;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: black;
+  height: 10vh;
+  padding: 2vh 0 2vh 0;
+  margin: 5vh 0;
+}
+#info{
+ width: 90%;
+ margin: auto;
+ .camp_des{
+  font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+  font-family: 'Open Sans', sans-serif;
+ }
+ .adgang{
+ font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+ font-family: 'Open Sans', sans-serif;
+}
+.faciliteter{
+list-style-type: none;
+font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+font-family: 'Open Sans', sans-serif;
+.facilitet{
+  font-size: calc(12px + 4 * ((100vw - 320px) / 680));
+  font-family: 'Open Sans', sans-serif;
+}
+}
+}

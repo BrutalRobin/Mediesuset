@@ -1,0 +1,77 @@
+
+<img id="heroimg" src="../../assets/biletter.jpg" alt="Ticket_img">
+  <h1 class="bigtext">KØB BILLET</h1>
+  <section id="info">
+<h2 class="tickethead">INFORMATION OM DEN VALGTE BILLET</h2>
+<br>
+<h3 class="name">{{ticket.item.name}}</h3>
+<br>
+<p class="desc">{{ticket.item.description}}</p>
+</section>
+<section id="order">
+<h2 class="tickethead">BESTILLING</h2>
+<div class="billet">
+  <div class="antal">
+  <input #antal type="number" id="quantity" value="1" name="quantity" min="1" max="30" (click)="calcTicket()"> <p class="stk">Stk.</p>
+</div>
+  <p class="ticket_name">{{ ticket.item.name}}</p>
+  <p class="ticket_price" #price> DKK {{ ticket.item.price}}</p>
+  <div class="calcgrid">
+    <p class="ticket_price">DKK</p>
+    <p class="ticket_price" #calc1>{{ ticket.item.price}}</p>
+  </div>
+  </div>
+  <div class="billet">
+    <div class="antal">
+  </div>
+    <p class="ticket_name"></p>
+    <p class="ticket_price"> Pris i alt: </p>
+    <div class="calcgrid">
+    <p class="ticket_price">DKK</p>
+    <p class="ticket_price" #calc2>{{ ticket.item.price}}</p>
+  </div>
+    </div>
+<div class="ordergrid">
+  <div class="form">
+  <form id="contact" action="" method="post">
+    <label class="desc" id="title106" for="Field106">
+      Select a Choice
+    </label>
+    <div>
+    <input #antalcamp type="number" id="quantity" value="" name="antalcamp" min="1" max="30" >
+    <select>
+      <ng-container *ngFor="let camp of ticket.item.camps;">
+        <option value="">{{camp.name}}</option>
+      </ng-container>
+    </select>
+    </div>
+    <fieldset>
+      <input placeholder="email" type="text" tabindex="1" required #email name="email" value="">
+    </fieldset>
+    <fieldset>
+      <input placeholder="kode" type="text" tabindex="2" required #kode name="kode" value="">
+    </fieldset>
+    <fieldset>
+      <input placeholder="kode2" type="text" tabindex="3" required #kode2 name="kode2" value="">
+    </fieldset>
+    <fieldset>
+      <input placeholder="navn" type="text" tabindex="4" required #navn name="navn" value="">
+    </fieldset>
+    <fieldset>
+      <input placeholder="adresse" type="text" tabindex="5" required #adresse name="adresse" value="">
+    </fieldset>
+    <fieldset>
+      <input placeholder="post" type="text" tabindex="6" required #post name="post" value="">
+    </fieldset>
+    <fieldset>
+      <input placeholder="navn" type="text" tabindex="7" required #by name="by" value="">
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" (click)="order(email.value, navn.value, adresse.value, post.value, by.value)">Submit</button>
+    </fieldset>
+  </form>
+</div>
+<div>hej</div>
+</div>
+</section>
+<app-footer></app-footer>

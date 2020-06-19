@@ -1,0 +1,161 @@
+
+  <div class="bigtext">LINE-UP</div>
+  <div id="sortgrid">
+    <p class="a-å" (click)="filterContent(0)">A-Å</p>
+    <p class="rød" (click)="filterContent(1)">RØD SCENE</p>
+    <p class="blå" (click)="filterContent(2)">BLÅ SCENE</p>
+    <p class="grøn" (click)="filterContent(3)">GRØN SCENE</p>
+    <p class="lilla" (click)="filterContent(4)">LILLA SCENE</p>
+    <div class="dropdown"><li class="dropbtn"><a>FILTER</a></li>
+      <div class="dropdown-content">
+        <a (click)="filterContent(5)">ART</a>
+        <a (click)="filterContent(6)">LIVE KONCERT</a>
+        <a (click)="filterContent(7)">CLUB DJ</a>
+        <a (click)="filterContent(8)">CINEMA</a>
+      </div></div>
+  </div>
+  <ng-template [ngIf]="filter == 0" [ngIfElse]="none">
+    <div class="eventgrid">
+      <div *ngFor="let event of sortBy('title')">
+      <div class="event {{event.type_name}} {{event.stage_id}}"   (click)="goToArtistPage(event.id)">
+        <img src="{{event.image}}" alt="produktimage">
+        <div class="scenecolor" [ngStyle]="{
+          'background-color': setUserColor(event.stage_id)}">
+          <p class="event-overskrift">{{ event.title}}</p>
+          <p class="event-time">{{ event.local_time}}</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="filter == 1" [ngIfElse]="none">
+      <div class="eventgrid">
+      <ng-container *ngFor="let event of events.items;">
+        <ng-container *ngIf="event.stage_id == 1">
+          <div class="event" (click)="goToArtistPage(event.id)">
+          <img src="{{event.image}}" alt="produktimage">
+          <div class="scenecolor" [ngStyle]="{
+            'background-color': setUserColor(event.stage_id)}">
+            <p class="event-overskrift">{{ event.title}}</p>
+            <p class="event-time">{{ event.local_time}}</p>
+          </div>
+        </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="filter == 2" [ngIfElse]="none">
+    <div class="eventgrid">
+    <ng-container *ngFor="let event of events.items;">
+      <ng-container *ngIf="event.stage_id == 2">
+        <div class="event" (click)="goToArtistPage(event.id)">
+        <img src="{{event.image}}" alt="produktimage">
+        <div class="scenecolor" [ngStyle]="{
+          'background-color': setUserColor(event.stage_id)}">
+          <p class="event-overskrift">{{ event.title}}</p>
+          <p class="event-time">{{ event.local_time}}</p>
+        </div>
+      </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-template>
+<ng-template [ngIf]="filter == 3" [ngIfElse]="none">
+  <div class="eventgrid">
+  <ng-container *ngFor="let event of events.items;">
+    <ng-container *ngIf="event.stage_id == 3">
+      <div class="event" (click)="goToArtistPage(event.id)">
+      <img src="{{event.image}}" alt="produktimage">
+      <div class="scenecolor" [ngStyle]="{
+        'background-color': setUserColor(event.stage_id)}">
+        <p class="event-overskrift">{{ event.title}}</p>
+        <p class="event-time">{{ event.local_time}}</p>
+      </div>
+    </div>
+    </ng-container>
+  </ng-container>
+</div>
+</ng-template>
+<ng-template [ngIf]="filter == 4" [ngIfElse]="none">
+  <div class="eventgrid">
+  <ng-container *ngFor="let event of events.items;">
+    <ng-container *ngIf="event.stage_id == 4">
+      <div class="event" (click)="goToArtistPage(event.id)">
+      <img src="{{event.image}}" alt="produktimage">
+      <div class="scenecolor" [ngStyle]="{
+        'background-color': setUserColor(event.stage_id)}">
+        <p class="event-overskrift">{{ event.title}}</p>
+        <p class="event-time">{{ event.local_time}}</p>
+      </div>
+    </div>
+    </ng-container>
+  </ng-container>
+</div>
+</ng-template>
+<ng-template [ngIf]="filter == 5" [ngIfElse]="none">
+  <div class="eventgrid">
+  <ng-container *ngFor="let event of events.items;">
+    <ng-container *ngIf="event.type_id== 4">
+      <div class="event" (click)="goToArtistPage(event.id)">
+      <img src="{{event.image}}" alt="produktimage">
+      <div class="scenecolor" [ngStyle]="{
+        'background-color': setUserColor(event.stage_id)}">
+        <p class="event-overskrift">{{ event.title}}</p>
+        <p class="event-time">{{ event.local_time}}</p>
+      </div>
+    </div>
+    </ng-container>
+  </ng-container>
+</div>
+</ng-template>
+<ng-template [ngIf]="filter == 6" [ngIfElse]="none">
+  <div class="eventgrid">
+  <ng-container *ngFor="let event of events.items;">
+    <ng-container *ngIf="event.type_id == 1">
+      <div class="event" (click)="goToArtistPage(event.id)">
+      <img src="{{event.image}}" alt="produktimage">
+      <div class="scenecolor" [ngStyle]="{
+        'background-color': setUserColor(event.stage_id)}">
+        <p class="event-overskrift">{{ event.title}}</p>
+        <p class="event-time">{{ event.local_time}}</p>
+      </div>
+    </div>
+    </ng-container>
+  </ng-container>
+</div>
+</ng-template>
+<ng-template [ngIf]="filter == 7" [ngIfElse]="none">
+  <div class="eventgrid">
+  <ng-container *ngFor="let event of events.items;">
+    <ng-container *ngIf="event.type_id == 2">
+      <div class="event" (click)="goToArtistPage(event.id)">
+      <img src="{{event.image}}" alt="produktimage">
+      <div class="scenecolor" [ngStyle]="{
+        'background-color': setUserColor(event.stage_id)}">
+        <p class="event-overskrift">{{ event.title}}</p>
+        <p class="event-time">{{ event.local_time}}</p>
+      </div>
+    </div>
+    </ng-container>
+  </ng-container>
+</div>
+</ng-template>
+<ng-template [ngIf]="filter == 8" [ngIfElse]="none">
+  <div class="eventgrid">
+  <ng-container *ngFor="let event of events.items;">
+    <ng-container *ngIf="event.type_id == 3">
+      <div class="event" (click)="goToArtistPage(event.id)">
+      <img src="{{event.image}}" alt="produktimage">
+      <div class="scenecolor" [ngStyle]="{
+        'background-color': setUserColor(event.stage_id)}">
+        <p class="event-overskrift">{{ event.title}}</p>
+        <p class="event-time">{{ event.local_time}}</p>
+      </div>
+    </div>
+    </ng-container>
+  </ng-container>
+</div>
+</ng-template>
+  <ng-template #none>
+  </ng-template>
+  <app-footer></app-footer>

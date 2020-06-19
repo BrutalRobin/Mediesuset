@@ -1,0 +1,60 @@
+
+<div class="bigtext">PROGRAM</div>
+<div class="ONSDAG">ONSDAG</div>
+<ng-container *ngFor="let event of program.items">
+  <ng-container *ngIf="event.datetime.indexOf('2020-07-08') !== -1" >
+  <div class="event ons{{event.stage_id}}">
+    <div class="event-time" [ngStyle]="{
+      'background-color': setUserColor(event.stage_name)}">
+      <p>{{ event.stage_name}}</p>
+      <p>{{ event.datetime}}</p>
+    </div>
+    <p class="event-overskrift">{{ event.event_title}}</p>
+    <button (click)="deleteIt(event.id)">FJERN</button>
+    </div>
+</ng-container>
+</ng-container>
+<div class="ONSDAG">TORSDAG</div>
+<ng-container *ngFor="let event of program.items">
+  <ng-container *ngIf="event.datetime.indexOf('2020-07-09') !== -1" >
+  <div class="event ons{{event.stage_id}}">
+    <div class="event-time" [ngStyle]="{
+      'background-color': setUserColor(event.stage_name)}">
+      <p>{{ event.stage_name}}</p>
+      <p>{{ event.datetime}}</p>
+    </div>
+    <p class="event-overskrift">{{ event.event_title}}</p>
+    <button (click)="deleteIt(event.id)">FJERN</button>
+    </div>
+</ng-container>
+</ng-container>
+<div class="ONSDAG">FREDAG</div>
+<ng-container *ngFor="let event of program.items">
+  <ng-container *ngIf="event.datetime.indexOf('2020-07-10') !== -1" >
+  <div class="event ons{{event.stage_id}}">
+    <div class="event-time" [ngStyle]="{
+      'background-color': setUserColor(event.stage_name)}">
+    <p>{{ event.stage_name}}</p>
+    <p>{{ event.datetime}}</p>
+  </div>
+    <p class="event-overskrift">{{ event.event_title}}</p>
+    <button (click)="deleteIt(event.id)">FJERN</button>
+    </div>
+</ng-container>
+</ng-container>
+<div class="ONSDAG">LØRDAG</div>
+<ng-container *ngFor="let event of program.items">
+  <ng-container *ngIf="event.datetime.indexOf('2020-07-11') !== -1" >
+  <div class="event ons{{event.stage_id}}">
+    <div class="event-time" [ngStyle]="{
+      'background-color': setUserColor(event.stage_name)}">
+      <p>{{ event.stage_name}}</p>
+      <p>{{ event.datetime}}</p>
+    </div>
+    <p class="event-overskrift">{{ event.event_title}}</p>
+    <button (click)="deleteIt(event.id)">FJERN</button>
+    </div>
+</ng-container>
+</ng-container>
+
+<app-footer></app-footer>

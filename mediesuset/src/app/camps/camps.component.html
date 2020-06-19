@@ -1,0 +1,36 @@
+  <img id="heroimg" src="../../assets/camps.jpg" alt="Campheader">
+  <div class="bigtext">CAMPS</div>
+  <div id="camps">
+    <div *ngFor="let camp of camps.items; let i=index">
+    <div class="camp" (click)="goToCampPage(camp.id)">
+      <img src="{{camp.image}}" alt="produktimage">
+        <p class="camp_navn">{{ camp.name}}</p>
+        <p class="camp_beskriv">{{ camp.description}}</p>
+        <br>
+        <ng-template [ngIf]="camp.id == 1" [ngIfElse]="none">
+          <p class="camp_adgang"> <strong>Adgang:</strong>
+          <br>
+          Alle armbånd.
+        </p>
+        </ng-template>
+        <ng-template [ngIf]="camp.id == 2" [ngIfElse]="none">
+          <p class="camp_adgang"> <strong>Adgang:</strong>
+          <br>
+          4 dags partout armbånd.
+        </p>
+        </ng-template>
+        <ng-template [ngIf]="camp.id == 3" [ngIfElse]="none">
+          <p class="camp_adgang"> <strong>Adgang:</strong>
+          <br>
+          4 dages De Luxe partout armbånd
+        </p>
+        </ng-template>
+        <ng-template #none>
+        </ng-template>
+        <br>
+        <p class="camp_people"> <strong> Samlet antal pladser:</strong> {{ camp.num_people}}</p>
+        <div class="semere"><button>LÆS MERE</button></div>
+    </div>
+  </div>
+  </div>
+  <app-footer></app-footer>

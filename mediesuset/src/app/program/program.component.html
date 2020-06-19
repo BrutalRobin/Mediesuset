@@ -1,0 +1,148 @@
+
+<div class="bigtext">PROGRAM</div>
+<div id="sortgrid">
+  <p class="rød" (click)="filterDay('ons1', 'ons2', 'ons3', 'ons4')">ONSDAG</p>
+  <p class="blå" (click)="filterDay('tors1', 'tors2', 'tors3', 'tors4')">TORSDAG</p>
+  <p class="grøn" (click)="filterDay('fre1', 'fre2', 'fre3', 'fre4')">FREDAG</p>
+  <p class="lilla" (click)="filterDay('lør1', 'lør2', 'lør3', 'lør4')">LØRDAG</p>
+</div>
+<section>
+ <div class="rødscene">
+  <div class="redscene">RØD SCENE</div>
+  <div *ngFor="let event of events.items | slice:0:4">
+    <div class="event ons{{event.stage_id}}">
+      <p class="event-time">{{ event.local_time}}</p>
+      <input type="checkbox" id="btnControl"/>
+      <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+      <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+      </div>
+    </div>
+  <div *ngFor="let event of events.items | slice:10:13">
+      <div class="event tors{{event.stage_id}}">
+        <p class="event-time">{{ event.local_time}}</p>
+        <input type="checkbox" id="btnControl"/>
+        <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+        <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+        </div>
+      </div>
+      <div *ngFor="let event of events.items | slice:23:26">
+        <div class="event fre{{event.stage_id}}">
+          <p class="event-time">{{ event.local_time}}</p>
+          <input type="checkbox" id="btnControl"/>
+          <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+          <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+          </div>
+        </div>
+        <div *ngFor="let event of events.items | slice:36:39">
+          <div class="event lør{{event.stage_id}}">
+            <p class="event-time">{{ event.local_time}}</p>
+            <input type="checkbox" id="btnControl"/>
+            <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+            <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+            </div>
+          </div>
+ </div>
+ <div class="blåscene">
+  <div class="blueecene">BLÅ SCENE</div>
+  <div *ngFor="let event of events.items | slice:4:7">
+    <div class="event ons{{event.stage_id}}">
+      <p class="event-time">{{ event.local_time}}</p>
+      <input type="checkbox" id="btnControl"/>
+      <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+      <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+      </div>
+    </div>
+    <div id="bluetors"  *ngFor="let event of events.items | slice:13:16">
+      <div class="event tors{{event.stage_id}}">
+        <p class="event-time">{{ event.local_time}}</p>
+        <input type="checkbox" id="btnControl"/>
+        <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+        <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+        </div>
+      </div>
+      <div id="bluefre"  *ngFor="let event of events.items | slice:26:29">
+        <div class="event fre{{event.stage_id}}">
+          <p class="event-time">{{ event.local_time}}</p>
+          <input type="checkbox" id="btnControl"/>
+          <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+          <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+          </div>
+        </div>
+        <div id="bluelør"  *ngFor="let event of events.items | slice:39:42">
+          <div class="event lør{{event.stage_id}}">
+            <p class="event-time">{{ event.local_time}}</p>
+            <input type="checkbox" id="btnControl"/>
+            <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+            <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+            </div>
+          </div>
+ </div>
+ <div class="grønscene">
+  <div class="greenecene">GRØN SCENE</div>
+  <div *ngFor="let event of events.items | slice:7:10">
+    <div class="event ons{{event.stage_id}}">
+      <p class="event-time">{{ event.local_time}}</p>
+      <input type="checkbox" id="btnControl"/>
+      <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+      <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+      </div>
+    </div>
+    <div id="greentors" *ngFor="let event of events.items | slice:16:19">
+      <div class="event tors{{event.stage_id}}">
+        <p class="event-time">{{ event.local_time}}</p>
+        <input type="checkbox" id="btnControl"/>
+        <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+        <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+        </div>
+      </div>
+      <div id="greenfre" *ngFor="let event of events.items | slice:29:32">
+        <div class="event fre{{event.stage_id}}">
+          <p class="event-time">{{ event.local_time}}</p>
+          <input type="checkbox" id="btnControl"/>
+          <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+          <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+          </div>
+        </div>
+        <div id="greenlør" *ngFor="let event of events.items | slice:42:46">
+          <div class="event lør{{event.stage_id}}">
+            <p class="event-time">{{ event.local_time}}</p>
+            <input type="checkbox" id="btnControl"/>
+            <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+            <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+            </div>
+          </div>
+ </div>
+ <div class="lillascene">
+   <div class="purpleecene">LILLA SCENE</div>
+   <div class="ons4">
+   <div class="event">
+    <p class="event-time">INTET HER</p>
+</div>
+ </div>
+ <div *ngFor="let event of events.items | slice:19:23">
+  <div class="event tors{{event.stage_id}}">
+    <p class="event-time">{{ event.local_time}}</p>
+    <input type="checkbox" id="btnControl"/>
+    <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+    <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+    </div>
+  </div>
+  <div *ngFor="let event of events.items | slice:32:36">
+    <div class="event fre{{event.stage_id}}">
+      <p class="event-time">{{ event.local_time}}</p>
+      <input type="checkbox" id="btnControl"/>
+      <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+      <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+      </div>
+    </div>
+    <div *ngFor="let event of events.items | slice:46:50">
+      <div class="event lør{{event.stage_id}}">
+        <p class="event-time">{{ event.local_time}}</p>
+        <input type="checkbox" id="btnControl"/>
+        <p class="event-overskrift" (click)="goToArtistPage(event.id)">{{ event.title}}</p>
+        <label for="demo"><button (click)="AddTo(event.id)">TILFØJ</button></label>
+        </div>
+      </div>
+ </div>
+</section>
+<app-footer></app-footer>

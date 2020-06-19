@@ -1,0 +1,59 @@
+  <img id="heroimg" src="{{camp.item.image}}" alt="newsImage">
+  <div class="bigtext">{{camp.item.name}}</div>
+  <section id="info">
+  <p class="camp_des">{{camp.item.description}}</p>
+  <br>
+  <br>
+  <ng-template [ngIf]="camp.item.id == 1" [ngIfElse]="none">
+    <p class="adgang"> <strong>Adgang:</strong>
+    <br>
+    Alle partout og enkeltdags armbånd.
+    <br>
+    Ved enkeltdags armbånd skal du huske at tjekke ud den efterfølgende dag inden kl. 10:00
+  </p>
+  </ng-template>
+  <ng-template [ngIf]="camp.item.id == 2" [ngIfElse]="none">
+    <p class="adgang"> <strong>Adgang:</strong>
+    <br>
+    4 dags partout armbånd.
+  </p>
+  </ng-template>
+  <ng-template [ngIf]="camp.item.id == 3" [ngIfElse]="none">
+    <p class="adgang"> <strong>Adgang:</strong>
+    <br>
+    4 dages De Luxe partout armbånd
+  </p>
+  </ng-template>
+  <ng-template #none>
+  </ng-template>
+  <br>
+  <P><strong class="faciliteter">På {{camp.item.name}} får du:</strong></P>
+  <br>
+  <div class="faciliteter">
+  <ng-container *ngFor="let facilitet of camp.item.facilities;">
+    <ng-container *ngIf="facilitet.id != 8">
+      <p class="facilitet">- {{facilitet.title}}
+      </p>
+    </ng-container>
+  </ng-container>
+</div>
+<br>
+<P><strong class="faciliteter">Åbningstider:</strong></P>
+<br>
+<div class="faciliteter">
+<ng-container *ngFor="let facilitet of camp.item.facilities;">
+  <ng-container *ngIf="facilitet.id == 8">
+    <p class="facilitet">- {{facilitet.title}}
+    </p>
+  </ng-container>
+</ng-container>
+</div>
+<br>
+<P><strong class="faciliteter">Antal pladser i alt:</strong></P>
+<br>
+<div class="faciliteter">
+<p>{{camp.item.num_people}}</p>
+</div>
+</section>
+<br><br><br>
+  <app-footer></app-footer>

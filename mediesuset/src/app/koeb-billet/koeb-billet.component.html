@@ -1,0 +1,19 @@
+<img id="heroimg" src="../../assets/biletter.jpg" alt="Ticket_img">
+  <div class="bigtext">KØB BILLET</div>
+<div class="tickethead">PARTOUT BILLET - ALLE DAGE</div>
+<div *ngFor="let ticket of tickets.items | slice:0:2">
+  <div class="billet {{ticket.id}}">
+    <p class="ticket_name">{{ ticket.name}}</p>
+    <p class="ticket_price">{{ ticket.price}}</p>
+    <button (click)="goToTicketPage(ticket.id)">KØB BILLET</button>
+    </div>
+  </div>
+  <div class="tickethead">ENKELTBILETTER</div>
+  <div *ngFor="let ticket of tickets.items | slice:2:6" >
+    <div class="billet {{ticket.id}}">
+      <p class="ticket_name">{{ ticket.name}}</p>
+      <p class="ticket_price">{{ ticket.price}}</p>
+      <button (click)="goToTicketPage(ticket.id)">KØB BILLET</button>
+      </div>
+    </div>
+  <app-footer></app-footer>
