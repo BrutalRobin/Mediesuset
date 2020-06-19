@@ -19,7 +19,9 @@ $grøn: #6B8846;
   margin: 5vh 0;
 }
 .info{
-  width: 90%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   margin: auto;
   font-size: calc(12px + 4 * ((100vw - 320px) / 680));
   font-family: 'Open Sans', sans-serif;
